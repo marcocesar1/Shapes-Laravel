@@ -16,7 +16,7 @@ services:
         image: postgres:15
         container_name: shapes_db
         ports:
-            - '5441:5432'
+            - '5446:5432'
         environment:
             PGPASSWORD: '${DB_PASSWORD:-secret}'
             POSTGRES_DB: '${DB_DATABASE}'
@@ -34,7 +34,7 @@ services:
         image: nginx:alpine
         container_name: shapes_nginx
         ports:
-            - 8023:80
+            - 8026:80
         volumes:
             - ../:/var/www
             - ./nginx/conf.d/:/etc/nginx/conf.d/
